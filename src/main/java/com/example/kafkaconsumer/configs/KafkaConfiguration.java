@@ -9,13 +9,13 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaConfiguration {
 
     //Nombre del tópico
-    public final static String TOPIC = "kafka-topic";
+    public final static String KAFKA_TOPIC = "kafka-topic";
 
     public final static String LISTENER_ID = "listener-id";
 
     @Bean
     public NewTopic topic() {
-        return TopicBuilder.name(TOPIC)
+        return TopicBuilder.name(KAFKA_TOPIC)
                 .partitions(10)
                 .replicas(1)
                 .build();

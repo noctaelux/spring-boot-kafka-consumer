@@ -12,7 +12,7 @@ public class KafkaConsumer {
     @Autowired
     MessageService messageService;
 
-    @KafkaListener(id = KafkaConfiguration.LISTENER_ID, topics = KafkaConfiguration.TOPIC)
+    @KafkaListener(id = KafkaConfiguration.LISTENER_ID, topics = KafkaConfiguration.KAFKA_TOPIC)
     private void listen(String message){
         messageService.printMessage(message);
     }
