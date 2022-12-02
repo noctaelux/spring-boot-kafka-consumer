@@ -7,10 +7,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class UnmarshallMessageImpl<T> implements UnmarshallMessage<T>{
 
+    Class<T> tClass;
+
     private ObjectMapper objectMapper = new ObjectMapper();
 
+    public UnmarshallMessageImpl(Class<T> tClass){
+        this.tClass = tClass;
+    }
+
     @Override
-    public T fromJson(String message, Class<T> tClass) throws JsonProcessingException {
-        return null;
+    public T fromJson(String message) throws JsonProcessingException {
+        return objectMapper.readValue(message,tClass);
     }
 }

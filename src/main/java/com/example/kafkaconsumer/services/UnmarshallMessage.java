@@ -4,6 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 public interface UnmarshallMessage<T> {
 
-    T fromJson(String message, Class<T> tClass) throws JsonProcessingException;
+    T fromJson(String message) throws JsonProcessingException;
 
 }
