@@ -20,7 +20,7 @@ public class MessageServiceImpl implements MessageService {
     public void printMessage(String message) {
         Usuario usuario = null;
         try {
-            usuario = unmarshallMessage.fromJson(message);
+            usuario = unmarshallMessage.fromJson(message, Usuario.class);
         } catch (JsonProcessingException e) {
             LOG.error(e.getMessage());
         }
