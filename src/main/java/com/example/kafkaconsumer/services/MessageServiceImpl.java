@@ -25,6 +25,6 @@ public class MessageServiceImpl implements MessageService {
             LOG.error(e.getMessage());
         }
         assert usuario != null;
-        LOG.info(usuario.toString());
+        LOG.info("RECEIVED MESSAGE ---> {}",usuario);
     }
 }
